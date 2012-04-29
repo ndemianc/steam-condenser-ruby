@@ -1,17 +1,19 @@
 # This code is free software; you can redistribute it and/or modify it under
 # the terms of the new BSD License.
 #
-# Copyright (c) 2011, Sebastian Staudt
+# Copyright (c) 2011-2012, Sebastian Staudt
 
 require 'open-uri'
 
 require 'multi_xml'
 
-module XMLData
+module SteamCondenser
+  module XMLData
 
-  def parse(url)
-    data = open(url, { :proxy => true })
-    @xml_data = MultiXml.parse(data).values.first
+    def parse(url)
+      data = open(url, { :proxy => true })
+      @xml_data = MultiXml.parse(data).values.first
+    end
+
   end
-
 end
