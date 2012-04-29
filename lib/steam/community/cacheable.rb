@@ -1,23 +1,25 @@
 # This code is free software; you can redistribute it and/or modify it under
 # the terms of the new BSD License.
 #
-# Copyright (c) 2009-2011, Sebastian Staudt
+# Copyright (c) 2009-2012, Sebastian Staudt
 
-# This module implements caching functionality to be used in any object class
-# having one or more unique object identifier (i.e. ID) and using a `fetch`
-# method to fetch data, e.g. using a HTTP download.
-#
-# @author Sebastian Staudt
 module SteamCondenser
+
+  # This module implements caching functionality to be used in any object class
+  # having one or more unique object identifier (i.e. ID) and using a `fetch`
+  # method to fetch data, e.g. using a HTTP download.
+  #
+  # @author Sebastian Staudt
   module Cacheable
 
-    # When this module is included in another class it is initialized to make use
-    # of caching
+    # When this module is included in another class it is initialized to make
+    # use of caching
     #
     # The original `new` method of the including class will be aliased with
     # `create`, relaying all instantiations to the `new` method defined in
     # {ClassMethods}. Additionally the class variable to save the attributes to
-    # cache (i.e. cache IDs) and the cache class variable itself are initialized.
+    # cache (i.e. cache IDs) and the cache class variable itself are
+    # initialized.
     #
     # @param [Class] base The class to extend with caching functionality
     # @see ClassMethods
@@ -37,11 +39,11 @@ module SteamCondenser
     # @author Sebastian Staudt
     module ClassMethods
 
-      # Defines wich instance variables which should be used to index the cached
-      # objects
+      # Defines wich instance variables which should be used to index the
+      # cached objects
       #
-      # @note A call to this method is needed if you want a class including this
-      #       module to really use the cache.
+      # @note A call to this method is needed if you want a class including
+      #       this module to really use the cache.
       # @param [Array<Symbol>] ids The symbolic names of the instance variables
       #        representing a unique identifier for this object class
       def cacheable_with_ids(*ids)
